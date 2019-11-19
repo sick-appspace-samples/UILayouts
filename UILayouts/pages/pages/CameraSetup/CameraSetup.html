@@ -1,0 +1,63 @@
+<layout-row id="RowLayout1" style="flex-wrap:wrap">
+	<layout-column id="viewer-column" style="flex-grow:2">
+		<sick-viewer2d id="Viewer2D1">
+		</sick-viewer2d>
+	</layout-column>
+	<layout-column id="settings-column">
+		<davinci-collapse id="exposure-settings-collapse" collapsed-title="Expand brightness settings"
+			expanded-title="Collapse brightness settings" open>
+
+
+			<layout-column id="exposer-settings-column">
+				<davinci-value-display id="labelExposure" value="Exposure time">
+				</davinci-value-display>
+				<layout-row id="exposure-row" style="flex-wrap:nowrap;align-items:baseline">
+					<davinci-slider id="sExposuretime" min="60" max="10000" ticks="10" unit="us" value="1000"
+						style="flex-grow:3">
+						<span></span>
+					</davinci-slider>
+					<davinci-value-display id="exposureValue" value="1000" style="flex-grow:1">
+					</davinci-value-display>
+				</layout-row>
+
+
+				<davinci-value-display id="labelGain" value="Gain">
+				</davinci-value-display>
+				<layout-row id="gain-row" style="flex-wrap:nowrap;align-items:baseline">
+					<davinci-slider id="sGain" min="0" max="100" ticks="1" value="3" style="flex-grow:3">
+						<span></span>
+					</davinci-slider>
+					<davinci-value-display id="gainValue" value="3" style="flex-grow:1">
+					</davinci-value-display>
+				</layout-row>
+
+				<davinci-value-display id="labelAutoGain" value="AutoGain">
+				</davinci-value-display>
+				<davinci-toggle-switch id="tAutoGain" tabindex="0">
+				</davinci-toggle-switch>
+
+			</layout-column>
+		</davinci-collapse>
+		<davinci-collapse id="trigger-settings-collapse" collapsed-title="Expand trigger settings"
+			expanded-title="Collapse trigger settings">
+			<layout-column id="trigger-settings-column">
+				<davinci-value-display id="labelMode" value="Mode">
+				</davinci-value-display>
+				<davinci-toggle-group id="ToggleGroup1" value="1">
+					<davinci-radio-button id="rbExternalTrigger" value="1">
+						<span>External trigger (DI1)</span>
+					</davinci-radio-button>
+					<davinci-radio-button id="rbCyclic" checked value="2">
+						<span>Cyclic</span>
+					</davinci-radio-button>
+				</davinci-toggle-group>
+				<davinci-value-display id="labelCyclicTime" value="Cycle time">
+				</davinci-value-display>
+				<davinci-numeric-field id="nCycleTime" type="outline" min="0" max="10000" ticks="10" group-separator=","
+					decimal-separator="." format-pattern="0" unit="ms" value="500">
+				</davinci-numeric-field>
+			</layout-column>
+		</davinci-collapse>
+	</layout-column>
+
+</layout-row>

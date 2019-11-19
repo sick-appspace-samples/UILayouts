@@ -1,0 +1,19 @@
+#settings-column {
+  margin-right: 20px;
+}
+
+#viewer-column {
+  min-width: 300px;
+}
+
+#settings-column {
+  min-width: 440px;
+}
+
+/* Workaround (viewer2D <= version 3.0.0.0): otherwise the viewer takes too much space and is rendered 
+                                             over elements layouted below */
+sick-viewer2d > div > div
+{ max-height: 100%; }
+
+sick-viewer3d > div > div
+{ max-height: 100%; }
