@@ -10,10 +10,11 @@
   min-width: 440px;
 }
 
-/* Workaround (viewer2D <= version 3.0.0.0): otherwise the viewer takes too much space and is rendered 
-                                             over elements layouted below */
-sick-viewer2d > div > div
-{ max-height: 100%; }
+#exposure-settings-collapse {
+  margin-bottom: 20px
+}
 
-sick-viewer3d > div > div
-{ max-height: 100%; }
+h6 {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}

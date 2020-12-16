@@ -1,17 +1,16 @@
 <layout-row id="RowLayout1" style="flex-wrap:wrap">
-	<layout-column id="viewer-column" style="flex-grow:2">
-		<sick-viewer2d id="Viewer2D1">
+	<layout-column id="viewer-column" style="flex-grow:2;height:100%">
+		<sick-viewer2d id="Viewer2D1" style="width:100%;height:100%">
 		</sick-viewer2d>
 	</layout-column>
+	
+
 	<layout-column id="settings-column">
 		<davinci-collapse id="exposure-settings-collapse" collapsed-title="Expand brightness settings"
-			expanded-title="Collapse brightness settings" open>
-
-
+			expanded-title="Collapse brightness settings" open style="width:100%">
 			<layout-column id="exposer-settings-column">
-				<davinci-value-display id="labelExposure" value="Exposure time">
-				</davinci-value-display>
-				<layout-row id="exposure-row" style="flex-wrap:nowrap;align-items:baseline">
+				<h6 id="Heading61">Exposure time</h6>
+				<layout-row id="exposure-row" style="flex-wrap:nowrap;align-items:center">
 					<davinci-slider id="sExposuretime" min="60" max="10000" ticks="10" unit="us" value="1000"
 						style="flex-grow:3">
 						<span></span>
@@ -20,10 +19,8 @@
 					</davinci-value-display>
 				</layout-row>
 
-
-				<davinci-value-display id="labelGain" value="Gain">
-				</davinci-value-display>
-				<layout-row id="gain-row" style="flex-wrap:nowrap;align-items:baseline">
+				<h6 id="Heading62">Gain</h6>
+				<layout-row id="gain-row" style="flex-wrap:nowrap;align-items:center">
 					<davinci-slider id="sGain" min="0" max="100" ticks="1" value="3" style="flex-grow:3">
 						<span></span>
 					</davinci-slider>
@@ -31,18 +28,16 @@
 					</davinci-value-display>
 				</layout-row>
 
-				<davinci-value-display id="labelAutoGain" value="AutoGain">
-				</davinci-value-display>
+				<h6 id="Heading63">AutoGain</h6>
 				<davinci-toggle-switch id="tAutoGain" tabindex="0">
 				</davinci-toggle-switch>
-
 			</layout-column>
 		</davinci-collapse>
+
 		<davinci-collapse id="trigger-settings-collapse" collapsed-title="Expand trigger settings"
-			expanded-title="Collapse trigger settings">
+			expanded-title="Collapse trigger settings" style="width:100%">
 			<layout-column id="trigger-settings-column">
-				<davinci-value-display id="labelMode" value="Mode">
-				</davinci-value-display>
+				<h6 id="Heading64">Mode</h6>
 				<davinci-toggle-group id="ToggleGroup1" value="1">
 					<davinci-radio-button id="rbExternalTrigger" value="1">
 						<span>External trigger (DI1)</span>
@@ -51,13 +46,12 @@
 						<span>Cyclic</span>
 					</davinci-radio-button>
 				</davinci-toggle-group>
-				<davinci-value-display id="labelCyclicTime" value="Cycle time">
-				</davinci-value-display>
+
+				<h6 id="Heading65">Cycle time</h6>
 				<davinci-numeric-field id="nCycleTime" type="outline" min="0" max="10000" ticks="10" group-separator=","
 					decimal-separator="." format-pattern="0" unit="ms" value="500">
 				</davinci-numeric-field>
 			</layout-column>
 		</davinci-collapse>
 	</layout-column>
-
 </layout-row>
